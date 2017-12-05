@@ -16,10 +16,10 @@ class CreateLessonsTable extends Migration
             $table->increments('id');
             $table->enum('day', ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']);
             $table->string('time');
+            $table->string('name');
             $table->string('teacher');
             $table->integer('max_students');
             $table->integer('places_left');
-            $table->string('name');
             $table->integer('date');
             $table->timestamps();
         });
