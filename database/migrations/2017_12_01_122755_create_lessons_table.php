@@ -18,6 +18,7 @@ class CreateLessonsTable extends Migration
             $table->string('time');
             $table->string('teacher');
             $table->integer('max_students');
+            $table->integer('places_left');
             $table->string('name');
             $table->integer('date');
             $table->timestamps();
