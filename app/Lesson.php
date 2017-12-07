@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     protected $fillable = [
-        'day', 'time', 'name', 'teacher', 'max_students', 'places_left', 'date',
+        'day', 'time', 'name', 'teacher', 'max_students', 'date',
     ];
 
     public function roles()

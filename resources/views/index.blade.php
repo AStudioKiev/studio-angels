@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
+@extends('template')
+
+@section('head')
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59585284-1"></script>
     <script>
@@ -26,9 +27,11 @@
     <script src="js/jquery.appear.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moment.js"></script>
-</head>
 
-<body>
+@stop
+
+@section('body')
+
 <ul id="mobile_nav" class="mobile-hidden">
     <li><a class="scroll" href="#home">Главная</a></li>
     <li><a class="scroll" href="#about_us">О нас</a></li>
@@ -437,7 +440,10 @@
         </div>
     </div>
 </div>
-</body>
+
+@stop
+
+@section('js-section')
 
 <script>
     //Allows bootstrap carousels to display 3 items per page rather than just one
@@ -557,4 +563,4 @@
     }
 </script>
 
-</html>
+@stop
