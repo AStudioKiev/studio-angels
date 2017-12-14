@@ -8,7 +8,9 @@ Route::group(['prefix' => 'admin'], function (){
 
     Route::get('/', 'Admin\IndexController@index');
 
-    Route::get('/add-post', 'Admin\IndexController@addPostIndex');
+    Route::get('/add-post', 'Admin\PostController@addIndex');
+    Route::post('/add-post', 'Admin\PostController@add');
 
-    Route::get('/edit-post/{id}', 'Admin\IndexController@editPostIndex');
+    Route::get('/edit-post/{id}', 'Admin\PostController@editIndex');
+    Route::post('/edit-post/{id}', 'Admin\PostController@edit');
 });

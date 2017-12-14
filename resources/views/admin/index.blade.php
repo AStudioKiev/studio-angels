@@ -14,8 +14,8 @@
 @section('body')
 
 <h1>Админ панель</h1>
-<h2><a href="{{Request::url()}}/add-post">Добавить</a></h2>
-<h2><a href="{{Request::url()}}/edit-schedule">Редактировать расписание</a></h2>
+<h2><a href="{{url('admin/add-post')}}">Добавить</a></h2>
+<h2><a href="{{url('admin/edit-schedule')}}">Редактировать расписание</a></h2>
 
 <table class="admin-table">
     <tr>
@@ -35,7 +35,7 @@
         <td>{{$post->text}}</td>
         <td><img width="100px" height="100px" src="{{ asset($post->image) }}"></td>
         <td>{{$post->counter}}</td>
-        <td><a href="{{Request::url()}}/edit-post/{{$post->id}}">Редактировать</a></td>
+        <td><a href="{{url('admin/edit-post', $post->id)}}">Редактировать</a></td>
         <td class="delete-post" data-toggle="modal" data-target="#myModal" data-id="{{$post->id}}">Удалить</td>
     </tr>
 @endforeach
