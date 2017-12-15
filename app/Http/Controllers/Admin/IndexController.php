@@ -9,7 +9,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
-        return view('admin.index')->with('posts', $posts);
+        return view('admin.index');
     }
 }

@@ -3,16 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 
 use Request;
 use App\Post;
 
 class PostController extends Controller
 {
+    public function index()
+    {
+        $posts = Post::all();
+        return view('admin.post.index')->with('posts', $posts);
+    }
+
     public function addIndex()
     {
-        return view('admin.add-post');
+        return view('admin.post.add-post');
     }
 
     public function add()
@@ -33,13 +38,18 @@ class PostController extends Controller
         }
 
         Post::create($inputs);
-        return redirect('/admin');
+        return redirect('/admin/post');
     }
 
     public function editIndex($id)
     {
         $post = Post::find($id);
-        return view('admin.edit-post')->with("id", $id);
+        return view('admin.post.edit-post', compact('post'));
+    }
+
+    public function edit()
+    {
+
     }
 
     private function getRandomName()
