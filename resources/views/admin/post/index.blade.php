@@ -1,86 +1,95 @@
-@extends('template')
-
-@section('head')
-    <meta charset="utf-8">
-    <title>Админ панель</title>
-
-    <link rel="stylesheet" href="{{ asset('css/admin-style.css') }}">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-@stop
+@extends('layouts.admin')
 
 @section('body')
 
-<h1>Админ панель</h1>
-<h2><a href="{{url('admin/post/add-post')}}">Добавить</a></h2>
-<h2><a href="{{url('admin/post/edit-schedule')}}">Редактировать расписание</a></h2>
+    <div class="main-grid admin-grid">
+        <div class="white-blur">
+            <h2 class="header-float-top">Админ панель</h2>
 
-<table class="admin-table">
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Text</th>
-        <th>Img</th>
-        <th>Counter</th>
-        <th></th>
-        <th></th>
-    </tr>
-
-@foreach ($posts as $post)
-    <tr>
-        <td>{{$post->id}}</td>
-        <td>{{$post->title}}</td>
-        <td>{{$post->text}}</td>
-        <td><img width="100px" height="100px" src="{{ asset($post->image) }}"></td>
-        <td>{{$post->counter}}</td>
-        <td><a href="{{url('admin/post/edit-post', $post->id)}}">Редактировать</a></td>
-        <td class="delete-post" data-toggle="modal" data-target="#myModal" data-id="{{$post->id}}">Удалить</td>
-    </tr>
-@endforeach
-
-</table>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog" style="width: 100%; max-width: 250px;">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Удалить запись?</h4>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-yes">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-no">No</button>
+            <div class="admin-holder table-responsive">
+                <table class="table admin-table">
+                    <a href="{{url('admin/post/add-post')}}">
+                        <button id="addNewBtn" name="add-new-btn" class="add-new-btn">Добавить новую статью</button>
+                    </a>
+                    <a href="{{url('admin/post/basket')}}">
+                        <button id="basketBtn" name="add-new-btn" class="add-new-btn">Корзина</button>
+                    </a>
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Заголовок</th>
+                        <th scope="col">Текст</th>
+                        <th scope="col">Картинка</th>
+                        <th scope="col">Счетчик</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{ csrf_field() }}
+                    @foreach ($posts as $post)
+                        <tr>
+                            <td>{{$post->id}}</td>
+                            <td>{{$post->title}}</td>
+                            <td>{{$post->text}}</td>
+                            <td>
+                                <img width="100px" height="100px" src="{{ asset($post->image) }}">
+                            </td>
+                            <td>{{$post->counter}}</td>
+                            <td class="admin-item green-item edit-item">
+                                <a href="{{url('admin/post/edit-post', $post->id)}}">Редактировать</a>
+                            </td>
+                            <td class="admin-item red-item delete-item" data-toggle="modal" data-target="#myModal" data-id="{{$post->id}}">Удалить</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
-</div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 100%; max-width: 250px;">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Удалить запись?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-yes">Да</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-no">Нет</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 @stop
 
 @section('js-section')
 
 <script>
-    $('.delete-post').on( "click", function() {
+    $('.delete-item').on( "click", function() {
         $('#modal-yes').attr("data-id", $(this).attr('data-id'));
     });
 
     $('#modal-yes').on( "click", function() {
-        var data = {dataID: $(this).attr('data-id')};
+        var data = {
+            data_id: $(this).attr('data-id'),
+            _token: $("input[name*='_token']").val()
+        };
         $.ajax({
-            url: 'index.php',
+            url: "{{url('admin/post/delete')}}",
             type: 'POST',
             data: data,
-            error: function () {
-                console.log('err');
+            error: function (result) {
+                console.log('err: ', result);
             },
             success: function (result) {
-                var el = 'td[data-id=' + data['dataID'] + ']';
+                var el = 'td[data-id=' + data['data_id'] + ']';
                 $(el).parent().remove();
             }
         });

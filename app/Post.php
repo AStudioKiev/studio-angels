@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Post
@@ -23,10 +23,21 @@ use Illuminate\Support\Collection;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property \Carbon\Carbon|null $deleted_at
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\Post onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Post withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Post withoutTrashed()
  */
 class Post extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'title', 'text', 'image',
     ];
+
+    protected $dates = ['deleted_at'];
 }

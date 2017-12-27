@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('image');
             $table->integer('counter')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -30,5 +31,8 @@ class CreatePostsTable extends Migration
     public function down()
     {
         Schema::drop('posts');
+        if (file_exists(public_path() . '/uploads/posts'))
+            foreach (glob(public_path() . '/uploads/posts/*') as $file)
+                unlink($file);
     }
 }

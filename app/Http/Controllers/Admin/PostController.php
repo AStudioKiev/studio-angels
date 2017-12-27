@@ -34,7 +34,7 @@ class PostController extends Controller
 
             $file = Request::file('image');
             $file->move(public_path() . '/uploads/posts/', $name);
-            $inputs['image'] = 'uploads/posts/' . $name;
+            $inputs['image'] = '/uploads/posts/' . $name;
         }
 
         Post::create($inputs);
@@ -49,7 +49,51 @@ class PostController extends Controller
 
     public function edit()
     {
+        $post = Post::find(Request::get('data-id'));
 
+        if(Request::hasFile('image'))
+        {
+            $pos = strrpos($post->image, '/');
+            $path = substr($post->image, 0, $pos);
+            $name = substr($post->image, $pos, strlen($post->image));
+
+            $file = Request::file('image');
+            $file->move(public_path() . $path, $name);
+        }
+
+        $post->title = Request::get('title');
+        $post->text = Request::get('text');
+        $post->update();
+
+        return redirect('/admin/post');
+    }
+
+    public function deletePost()
+    {
+        return Post::destroy(Request::get('data_id'));
+    }
+
+    public function basketIndex()
+    {
+        $posts = Post::onlyTrashed()->get();
+        return view('admin.post.basket')->with('posts', $posts);
+    }
+
+    public function basketRecover()
+    {
+        $post = Post::onlyTrashed()->find(Request::get('data_id'));
+        return strval($post->restore());
+    }
+
+    public function basketDelete()
+    {
+        $post = Post::onlyTrashed()->find(Request::get('data_id'));
+        return strval($post->forceDelete());
+    }
+
+    public function basketClear()
+    {
+        return strval(Post::onlyTrashed()->forceDelete());
     }
 
     private function getRandomName()

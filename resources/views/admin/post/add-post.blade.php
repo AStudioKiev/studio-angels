@@ -1,34 +1,39 @@
-@extends('template')
-
-@section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin-style.css') }}">
-    <meta charset="utf-8">
-    <title>Админ панель</title>
-@stop
+@extends('layouts.admin')
 
 @section('body')
 
-<h1>Админ панель</h1>
+    <div class="inside-grid admin-grid">
+        <div class="white-blur">
+            <div class="outer-wrapper">
+                <div class="inner-wrapper">
+                    <h2 class="header-float-top">Админ панель</h2>
+                    <div class="form-holder">
+                        <form method="post" id="insideForm" class="form" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="select-wrapper">
+                                <div class="select form-group mar-tp-1 mar-bt-2">
+                                    <input type="text" name="title" required placeholder="Заголовок" class="form-control input-field">
+                                </div>
+                            </div>
+                            <div class="select-wrapper image-upload-form">
+                                <div class="select form-group upload-holder">
+                                    <div class="upload-fictive"><span>Choose a file</span></div>
+                                    <!-- 5MB limit -->
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+                                    <input type="file" name="image" class="form-control upload-file">
+                                    <span class="not-found-label">File is not found</span>
+                                </div>
+                            </div>
+                            <div class="select-wrapper mar-bt-1">
+                                <textarea id="text" rows="7" name="text" placeholder="Текст" class="textarea-field"></textarea>
+                            </div>
 
-<div>
-
-    {!! Form::open(['files' => 'true']) !!}
-
-        {!! Form::label('title') !!}
-        {!! Form::text('title') !!}
-
-        <!-- 10MB limit -->
-        {!! Form::hidden('MAX_FILE_SIZE', '10000000') !!}
-        {!! Form::label('image') !!}
-        {!! Form::file('image') !!}
-
-        {!! Form::label('text') !!}
-        {!! Form::textarea('text') !!}
-
-        {!! Form::submit('Добавить') !!}
-
-    {!! Form::close() !!}
-
-</div>
+                            <input type="submit" value="Создать">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @stop
