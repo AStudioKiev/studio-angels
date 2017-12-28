@@ -12,9 +12,9 @@
                 {{--<a href="page-comments/page-comments.php">
                     <button id="blogBtn" name="add-new-btn" class="add-new-btn">Управление коментариями на страницах</button>
                 </a>--}}
-                {{--<a href="edit-schedule.php">
+                <a href="{{url('admin/lessons')}}">
                     <button id="blogBtn" name="add-new-btn" class="add-new-btn">Управление расписанием</button>
-                </a>--}}
+                </a>
             </div>
         </div>
     </div>

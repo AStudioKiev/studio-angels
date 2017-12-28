@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
 use Request;
+
 use App\Post;
 
 class PostController extends Controller
@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function addIndex()
     {
-        return view('admin.post.add-post');
+        return view('admin.post.add');
     }
 
     public function add()
@@ -44,7 +44,7 @@ class PostController extends Controller
     public function editIndex($id)
     {
         $post = Post::find($id);
-        return view('admin.post.edit-post', compact('post'));
+        return view('admin.post.edit', compact('post'));
     }
 
     public function edit()
@@ -68,7 +68,7 @@ class PostController extends Controller
         return redirect('/admin/post');
     }
 
-    public function deletePost()
+    public function delete()
     {
         return Post::destroy(Request::get('data_id'));
     }

@@ -8,7 +8,7 @@
 
             <div class="admin-holder table-responsive">
                 <table class="table admin-table">
-                    <a href="{{url('admin/post/add-post')}}">
+                    <a href="{{url('admin/post/add')}}">
                         <button id="addNewBtn" name="add-new-btn" class="add-new-btn">Добавить новую статью</button>
                     </a>
                     <a href="{{url('admin/post/basket')}}">
@@ -37,7 +37,7 @@
                             </td>
                             <td>{{$post->counter}}</td>
                             <td class="admin-item green-item edit-item">
-                                <a href="{{url('admin/post/edit-post', $post->id)}}">Редактировать</a>
+                                <a href="{{url('admin/post/edit', $post->id)}}">Редактировать</a>
                             </td>
                             <td class="admin-item red-item delete-item" data-toggle="modal" data-target="#myModal" data-id="{{$post->id}}">Удалить</td>
                         </tr>
