@@ -2,9 +2,8 @@
 
 Route::auth();
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'MainController@index');
+Route::get('/blog', 'MainController@blog');
 
 /* Админка */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
@@ -39,8 +38,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
         Route::get('/add', 'Admin\LessonsController@addIndex');
         Route::post('/add', 'Admin\LessonsController@add');
 
-        Route::get('/edit', 'Admin\LessonsController@editIndex');
-        Route::post('/edit', 'Admin\LessonsController@edit');
+        Route::get('/edit/{id}', 'Admin\LessonsController@editIndex');
+        Route::post('/edit/{id}', 'Admin\LessonsController@edit');
+        Route::post('/edit', 'Admin\LessonsController@editAll');
 
         Route::post('/delete', 'Admin\LessonsController@delete');
     });

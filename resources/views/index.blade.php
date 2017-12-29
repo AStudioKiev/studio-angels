@@ -1,7 +1,6 @@
-@extends('template')
-
-@section('head')
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59585284-1"></script>
     <script>
@@ -27,11 +26,9 @@
     <script src="js/jquery.appear.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moment.js"></script>
+</head>
 
-@stop
-
-@section('body')
-
+<body>
 <ul id="mobile_nav" class="mobile-hidden">
     <li><a class="scroll" href="#home">Главная</a></li>
     <li><a class="scroll" href="#about_us">О нас</a></li>
@@ -101,14 +98,36 @@
     </div>
 </div>
 
+<div id="feedback" class="feedback-block">
+    <div class="skew-bg"></div>
+
+    <div class="container-md" align="right" id="page-comment" page-num="1">
+        <div class="feedback-row-1">
+            <div class="feedback-navigation">
+                <a class="feedback-arrow-lt"><img src="img/left_pink.png" alt="" height="100%"></a>
+                <a class="feedback-arrow-rt"><img src="img/right_pink.png" alt="" height="100%"></a>
+            </div>
+            <div id="feedback_1" class="feedback-1">
+                <span>Мило и уютно. Очень высокие пилоны, есть где разгулятся) а еще есть душ, что большая редкость. Персонал приветливый, тренера очень внимательные и дружелюбные.</span>
+            </div>
+        </div>
+        <div class="feedback-row-2">
+            <div id="feedback_2" class="feedback-2">
+                <span>Чудесное место! Тренеры профессионалы своего дела, каждому уделяют внимание, помогают, страхуют, советуют. Тело прокачивается с каждой тренировкой. Занятие продумано от и до. Хожу с радостью уже долгое время и желание ходить не пропадает абсолютно))</span>
+            </div>
+            <div class="feedback-girl"><img src="img/feedback_girl.png" alt="" width="100%"></div>
+        </div>
+    </div>
+</div>
+
 <div id="gallery" class="gallery-block">
     <div class="pink-blur">
         <img class="white-line skew-inverse" src="img/white_lines.png" alt="">
         <img class="white-line line-bottom skew-inverse" src="img/white_lines.png" alt="">
 
         <div class="gallery-info-holder space-btw skew-inverse">
-            <h3 class="gallery-text-left">17 чемпионов</h3>
-            <h3 class="gallery-text-right">26 концертов</h3>
+            <h3 class="gallery-text-left" align="center">Мы воспитали<br> 17 чемпионов</h3>
+            <h3 class="gallery-text-right" align="center">Мы провели<br> 26 концертов</h3>
         </div>
 
         <div class="gallery-grid skew-inverse">
@@ -326,6 +345,73 @@
             </tr>
             </thead>
             <tbody>
+
+            @for ($i = 0; $i < $lessons['max_count']; $i++)
+                <tr>
+                    @if (count($lessons['Понедельник']) > $i)
+                        <td>
+                            <p>{{$lessons['Понедельник'][$i]->time}}</p>
+                            <p>{{$lessons['Понедельник'][$i]->name}}</p>
+                        </td>
+                    @else
+                        <td></td>
+                    @endif
+
+                    @if (count($lessons['Вторник']) > $i)
+                            <td>
+                                <p>{{$lessons['Вторник'][$i]->time}}</p>
+                                <p>{{$lessons['Вторник'][$i]->name}}</p>
+                            </td>
+                    @else
+                        <td></td>
+                    @endif
+
+                    @if (count($lessons['Среда']) > $i)
+                            <td>
+                                <p>{{$lessons['Среда'][$i]->time}}</p>
+                                <p>{{$lessons['Среда'][$i]->name}}</p>
+                            </td>
+                    @else
+                        <td></td>
+                    @endif
+
+                    @if (count($lessons['Четверг']) > $i)
+                        <td>
+                            <p>{{$lessons['Четверг'][$i]->time}}</p>
+                            <p>{{$lessons['Четверг'][$i]->name}}</p>
+                        </td>
+                    @else
+                        <td></td>
+                    @endif
+
+                    @if (count($lessons['Пятница']) > $i)
+                            <td>
+                                <p>{{$lessons['Пятница'][$i]->time}}</p>
+                                <p>{{$lessons['Пятница'][$i]->name}}</p>
+                            </td>
+                    @else
+                        <td></td>
+                    @endif
+
+                    @if (count($lessons['Суббота']) > $i)
+                            <td>
+                                <p>{{$lessons['Суббота'][$i]->time}}</p>
+                                <p>{{$lessons['Суббота'][$i]->name}}</p>
+                            </td>
+                    @else
+                        <td></td>
+                    @endif
+
+                    @if (count($lessons['Воскресенье']) > $i)
+                            <td>
+                                <p>{{$lessons['Воскресенье'][$i]->time}}</p>
+                                <p>{{$lessons['Воскресенье'][$i]->name}}</p>
+                            </td>
+                    @else
+                        <td></td>
+                    @endif
+                </tr>
+            @endfor
             </tbody>
         </table>
     </div>
@@ -338,7 +424,7 @@
 
             <div class="price-body">
                 <p>Разовое посещение</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -346,7 +432,7 @@
 
             <div class="price-body">
                 <p>4<br>занятия</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -354,7 +440,7 @@
 
             <div class="price-body">
                 <p>6<br>занятий</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -362,7 +448,7 @@
 
             <div class="price-body">
                 <p>8<br>занятий</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -370,7 +456,7 @@
 
             <div class="price-body">
                 <p>10<br>занятий</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -378,7 +464,7 @@
 
             <div class="price-body">
                 <p>12<br>занятий</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -386,7 +472,7 @@
 
             <div class="price-body">
                 <p>персональная  тренировка<br>1 человек</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -394,7 +480,7 @@
 
             <div class="price-body">
                 <p>персональная  тренировка<br>2 человека</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -402,7 +488,7 @@
 
             <div class="price-body">
                 <p>детская  тренировка<br>8 занятий</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
         <div class="price-card">
@@ -410,7 +496,7 @@
 
             <div class="price-body">
                 <p>БЕЗЛИМИТНЫЙ</p>
-                <a href="#" class="want-btn">хочу</a>
+                <a class="want-btn">хочу</a>
             </div>
         </div>
     </div>
@@ -440,10 +526,7 @@
         </div>
     </div>
 </div>
-
-@stop
-
-@section('js-section')
+</body>
 
 <script>
     //Allows bootstrap carousels to display 3 items per page rather than just one
@@ -460,9 +543,7 @@
             $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
         }
     });
-</script>
 
-<script>
     function getDaysInMonth(month,year) {
         if( typeof year == "undefined") year = 1999; // any non-leap-year works as default
         var currmon = new Date(year,month),
@@ -498,17 +579,13 @@
         $("#time-elapsed").text(getDateTimeSince(new Date(2009,8,5,00,00,00)));
     }, 1000);
 
-</script>
 
-<script>
     $('.carousel').carousel();
     $("#carousel-example-generic .carousel-indicators p").hover(function() {
         var goto = Number( $(this).attr('data-slide-to') );
         $("#carousel-example-generic").carousel(goto);
     });
-</script>
 
-<script>
     $(function() {
         $(document.body).on('appear', '.popup-up', function(e, $affected) {
             $(this).addClass("appeared");
@@ -533,9 +610,7 @@
         });
         $('.popup-right').appear({force_process: true});
     });
-</script>
 
-<script>
     $(document).ready(function() {
         $(".scroll").click(function() {
             $("html, body").animate({
@@ -547,9 +622,7 @@
             return false;
         });
     });
-</script>
 
-<script>
     function showNav() {
         var nav = document.getElementById("mobile_nav");
         if (nav.classList.contains('mobile-hidden')) {
@@ -561,6 +634,48 @@
             nav.classList.add('mobile-hidden');
         }
     }
+
+    $('.feedback-arrow-rt').on('click', function () {
+        var data = {
+            action: 'get-page-comment',
+            page: 'index',
+            limit: 2,
+            page_num: Number($('#page-comment').attr('page-num')) + 1
+        };
+
+        $.ajax({
+            url: 'index.php',
+            type: 'POST',
+            data: data,
+            success: function (res) {
+                console.log('success: res - ', res);
+            },
+            error: function (res) {
+                console.log('error: res - ', res);
+            }
+        });
+    });
+
+    $('.feedback-arrow-lt').on('click', function () {
+        var data = {
+            action: 'get-page-comment',
+            page: 'index',
+            limit: 2,
+            page_num: Number($('#page-comment').attr('page-num')) - 1
+        };
+
+        $.ajax({
+            url: 'index.php',
+            type: 'POST',
+            data: data,
+            success: function (res) {
+                console.log('success: res - ', res);
+            },
+            error: function (res) {
+                console.log('error: res - ', res);
+            }
+        });
+    });
 </script>
 
-@stop
+</html>

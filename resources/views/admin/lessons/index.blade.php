@@ -34,7 +34,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Понедельник'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Понедельник'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Понедельник'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Понедельник'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Понедельник'][$i]->id}}">Удалить</span>
                         </td>
                         @else
@@ -46,7 +46,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Вторник'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Вторник'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Вторник'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Вторник'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Вторник'][$i]->id}}">Удалить</span>
                         </td>
                         @else
@@ -58,7 +58,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Среда'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Среда'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Среда'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Среда'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Среда'][$i]->id}}">Удалить</span>
                         </td>
                         @else
@@ -70,7 +70,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Четверг'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Четверг'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Четверг'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Четверг'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Четверг'][$i]->id}}">Удалить</span>
                         </td>
                         @else
@@ -82,7 +82,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Пятница'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Пятница'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Пятница'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Пятница'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Пятница'][$i]->id}}">Удалить</span>
                         </td>
                         @else
@@ -94,7 +94,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Суббота'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Суббота'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Суббота'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Суббота'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Суббота'][$i]->id}}">Удалить</span>
                         </td>
                         @else
@@ -106,7 +106,7 @@
                             <input class="lesson-input" type="text" name="time" value="{{$lessons['Воскресенье'][$i]->time}}">
                             <input class="lesson-input" type="text" name="name" value="{{$lessons['Воскресенье'][$i]->name}}">
                             <input class="lesson-input" type="hidden" name="id" value="{{$lessons['Воскресенье'][$i]->id}}">
-                            <a href="{{url('/admin/lessons/edit')}}" class="admin-item green-item">Редактировать</a>
+                            <a href="{{url('/admin/lessons/edit', $lessons['Воскресенье'][$i]->id)}}" class="admin-item green-item">Редактировать</a>
                             <span class="delete-item admin-item red-item" data-toggle="modal" data-target="#myModal" data-id="{{$lessons['Воскресенье'][$i]->id}}">Удалить</span>
                         </td>
                         @else

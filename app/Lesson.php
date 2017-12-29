@@ -29,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Lesson whereTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Lesson whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $table_order
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Lesson whereTableOrder($value)
  */
 class Lesson extends Model
 {

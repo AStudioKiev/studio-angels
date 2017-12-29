@@ -8,7 +8,7 @@
                 <div class="inner-wrapper">
                     <h2 class="header-float-top">Админ панель</h2>
                     <div class="form-holder">
-                        <form method="post" id="insideForm" class="form" enctype="multipart/form-data">
+                        <form method="post" id="insideForm" class="form">
                             {{ csrf_field() }}
                             <div class="select-wrapper">
                                 <div class="select form-group mar-tp-1 mar-bt-2">
@@ -30,7 +30,7 @@
                                     <input type="text" name="name" required placeholder="Название" class="form-control input-field">
                                 </div>
                                 <div class="select form-group mar-tp-1 mar-bt-2">
-                                    <input type="text" name="teacher" required placeholder="Преподаватель" class="form-control input-field">
+                                    <input type="text" name="teacher" required placeholder="Преподаватель" class="form-control input-field" value="Test">
                                 </div>
                                 <div class="select form-group mar-tp-1 mar-bt-2">
                                     <input type="number" name="max_students" required placeholder="Максимальное количество учасников" class="form-control input-field" value="8">
