@@ -32,6 +32,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
         });
     });
 
+    /* Коментарии на странице */
+    Route::group(['prefix' => 'page-comments'], function (){
+        Route::get('/', 'Admin\PageCommentsController@index');
+        Route::get('/add', 'Admin\PageCommentsController@addIndex');
+        Route::post('/add', 'Admin\PageCommentsController@add');
+        Route::get('/edit/{id}', 'Admin\PageCommentsController@editIndex');
+        Route::post('/edit', 'Admin\PageCommentsController@edit');
+        Route::post('/delete', 'Admin\PageCommentsController@delete');
+
+       // Корзина коментариев на странице
+        Route::group(['prefix' => 'basket'], function(){
+            Route::get('/', 'Admin\PageCommentsController@basketIndex');
+            Route::post('/delete', 'Admin\PageCommentsController@basketDelete');
+            Route::post('/recover', 'Admin\PageCommentsController@basketRecover');
+            Route::post('/clear', 'Admin\PageCommentsController@basketClear');
+        });
+    });
+
     /* Расписание */
     Route::group(['prefix' => 'lessons'], function () {
         Route::get('/', 'Admin\LessonsController@index');

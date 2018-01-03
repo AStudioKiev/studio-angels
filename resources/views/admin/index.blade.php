@@ -9,9 +9,9 @@
                 <a href="{{url('admin/post')}}">
                     <button id="blogBtn" name="add-new-btn" class="add-new-btn">Управление блогом</button>
                 </a>
-                {{--<a href="page-comments/page-comments.php">
+                <a href="{{url('admin/page-comments')}}">
                     <button id="blogBtn" name="add-new-btn" class="add-new-btn">Управление коментариями на страницах</button>
-                </a>--}}
+                </a>
                 <a href="{{url('admin/lessons')}}">
                     <button id="blogBtn" name="add-new-btn" class="add-new-btn">Управление расписанием</button>
                 </a>
