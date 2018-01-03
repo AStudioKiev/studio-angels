@@ -18,6 +18,7 @@ class CreatePageCommentsTable extends Migration
             $table->string('author');
             $table->text('comment');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

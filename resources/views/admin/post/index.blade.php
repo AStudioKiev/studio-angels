@@ -1,51 +1,46 @@
 @extends('layouts.admin')
 
 @section('body')
+    <h2 class="header-float-top">Админ панель</h2>
 
-    <div class="main-grid admin-grid">
-        <div class="white-blur">
-            <h2 class="header-float-top">Админ панель</h2>
-
-            <div class="admin-holder table-responsive">
-                <table class="table admin-table">
-                    <a href="{{url('admin/post/add')}}">
-                        <button id="addNewBtn" name="add-new-btn" class="add-new-btn">Добавить новую статью</button>
-                    </a>
-                    <a href="{{url('admin/post/basket')}}">
-                        <button id="basketBtn" name="add-new-btn" class="add-new-btn">Корзина</button>
-                    </a>
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Заголовок</th>
-                        <th scope="col">Текст</th>
-                        <th scope="col">Картинка</th>
-                        <th scope="col">Счетчик</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {{ csrf_field() }}
-                    @foreach ($posts as $post)
-                        <tr>
-                            <td>{{$post->id}}</td>
-                            <td>{{$post->title}}</td>
-                            <td>{{$post->text}}</td>
-                            <td>
-                                <img width="100px" height="100px" src="{{ asset($post->image) }}">
-                            </td>
-                            <td>{{$post->counter}}</td>
-                            <td class="admin-item green-item edit-item">
-                                <a href="{{url('admin/post/edit', $post->id)}}">Редактировать</a>
-                            </td>
-                            <td class="admin-item red-item delete-item" data-toggle="modal" data-target="#myModal" data-id="{{$post->id}}">Удалить</td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="admin-holder table-responsive">
+        <table class="table admin-table">
+            <a href="{{url('admin/post/add')}}">
+                <button id="addNewBtn" name="add-new-btn" class="add-new-btn">Добавить новую статью</button>
+            </a>
+            <a href="{{url('admin/post/basket')}}">
+                <button id="basketBtn" name="add-new-btn" class="add-new-btn">Корзина</button>
+            </a>
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Заголовок</th>
+                <th scope="col">Текст</th>
+                <th scope="col">Картинка</th>
+                <th scope="col">Счетчик</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{ csrf_field() }}
+            @foreach ($posts as $post)
+                <tr>
+                    <td>{{$post->id}}</td>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->text}}</td>
+                    <td>
+                        <img width="100px" height="100px" src="{{ asset($post->image) }}">
+                    </td>
+                    <td>{{$post->counter}}</td>
+                    <td class="admin-item green-item edit-item">
+                        <a href="{{url('admin/post/edit', $post->id)}}">Редактировать</a>
+                    </td>
+                    <td class="admin-item red-item delete-item" data-toggle="modal" data-target="#myModal" data-id="{{$post->id}}">Удалить</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 
     <!-- Modal -->

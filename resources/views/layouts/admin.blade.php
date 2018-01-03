@@ -20,7 +20,15 @@
 </head>
 
 <body>
-    @yield('body')
+<div class="main-grid admin-grid">
+    <div class="white-blur">
+        <div class="outer-wrapper">
+            <div class="inner-wrapper">
+                @yield('body')
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 @yield('js-section')
