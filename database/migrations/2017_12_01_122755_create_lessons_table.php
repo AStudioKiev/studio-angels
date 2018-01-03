@@ -21,7 +21,6 @@ class CreateLessonsTable extends Migration
             $table->integer('max_students');
             $table->integer('places_left');
             $table->integer('date');
-            $table->integer('table_order');
             $table->timestamps();
         });
     }

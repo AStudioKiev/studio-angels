@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Request;
 
 use App\Lesson;
+use App\Post;
 
 class MainController extends Controller
 {
@@ -35,6 +36,16 @@ class MainController extends Controller
 
     public function blog()
     {
-        return view('blog');
+        $posts = Post::orderBy('counter')->get();
+        return view('blog', compact('posts'));
+    }
+
+    public function article($id)
+    {
+        $post = Post::find($id);
+        $post->counter++;
+        $post->update();
+
+        return view('article', compact('post'));
     }
 }

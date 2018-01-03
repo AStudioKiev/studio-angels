@@ -33,7 +33,7 @@
     <li><a class="scroll" href="#home">Главная</a></li>
     <li><a class="scroll" href="#about_us">О нас</a></li>
     <li><a class="scroll" href="#gallery">Галерея</a></li>
-    <li><a class="scroll" href="blog.php">Блог</a></li>
+    <li><a class="scroll" href="{{url('blog')}}">Блог</a></li>
     <li><a class="scroll" href="#info_block">Напрвления</a></li>
     <li><a class="scroll" href="#timetable">Расписание</a></li>
     <li><a class="scroll" href="#prices">Цены</a></li>

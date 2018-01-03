@@ -4,6 +4,7 @@ Route::auth();
 
 Route::get('/', 'MainController@index');
 Route::get('/blog', 'MainController@blog');
+Route::get('/article/{id}', 'MainController@article');
 
 /* Админка */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
