@@ -76,7 +76,7 @@ class PostController extends Controller
     public function basketIndex()
     {
         $posts = Post::onlyTrashed()->get();
-        return view('admin.post.basket')->with('posts', $posts);
+        return view('admin.post.basket', compact('posts'));
     }
 
     public function basketRecover()

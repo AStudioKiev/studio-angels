@@ -22,6 +22,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic" rel="stylesheet">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
+
     <script src="js/jquery.js"></script>
     <script src="js/jquery.appear.js"></script>
     <script src="js/bootstrap.min.js"></script>

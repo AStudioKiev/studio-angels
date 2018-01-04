@@ -52,21 +52,24 @@ class PageCommentsController extends Controller
 
     public function basketIndex()
     {
-
+        $pageComments = PageComment::onlyTrashed()->get();
+        return view('admin.page-comments.basket', compact('pageComments'));
     }
 
     public function basketDelete()
     {
-
+        $pageComment = PageComment::onlyTrashed()->find(Request::get('data_id'));
+        return strval($pageComment->forceDelete());
     }
 
     public function basketRecover()
     {
-
+        $pageComment = PageComment::onlyTrashed()->find(Request::get('data_id'));
+        return strval($pageComment->restore());
     }
 
     public function basketClear()
     {
-
+        return strval(PageComment::onlyTrashed()->forceDelete());
     }
 }

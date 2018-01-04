@@ -5,6 +5,12 @@
 
     <div class="admin-holder table-responsive">
         <table class="table admin-table">
+            <a href="{{url('admin')}}">
+                <button id="mainBtn" name="add-new-btn" class="add-new-btn">Главная</button>
+            </a>
+            <a href="{{url('admin/post')}}">
+                <button id="mainBtn" name="add-new-btn" class="add-new-btn">Управление блогом</button>
+            </a>
             <button id="clear" data-toggle="modal" data-target="#clearModal" class="add-new-btn">Очистить корзину</button>
             <thead>
             <tr>
