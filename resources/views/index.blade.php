@@ -105,6 +105,7 @@
     <div class="skew-bg"></div>
 
     <div class="container-md" align="right" id="page-comment" page-num="1">
+        {{ csrf_field() }}
         <div class="feedback-row-1">
             <div class="feedback-navigation">
                 <a class="feedback-arrow-lt"><img src="img/left_pink.png" alt="" height="100%"></a>
@@ -640,42 +641,54 @@
 
     $('.feedback-arrow-rt').on('click', function () {
         var data = {
-            action: 'get-page-comment',
             page: 'index',
             limit: 2,
-            page_num: Number($('#page-comment').attr('page-num')) + 1
+            page_num: Number($('#page-comment').attr('page-num')) + 1,
+            _token: $("input[name*='_token']").val()
         };
 
         $.ajax({
-            url: 'index.php',
+            url: "{{url('get-page-comment')}}",
             type: 'POST',
             data: data,
-            success: function (res) {
-                console.log('success: res - ', res);
+            success: function (result) {
+                $('#page-comment').attr('page-num', result.page_num);
+                $('#feedback_1 span').text(result.comments[0]['comment']);
+
+                if(result.comments[1] !== undefined)
+                    $('#feedback_2 span').text(result.comments[1]['comment']);
+                else
+                    $('#feedback_2 span').text('');
             },
-            error: function (res) {
-                console.log('error: res - ', res);
+            error: function (result) {
+                console.log('error: result - ', result);
             }
         });
     });
 
     $('.feedback-arrow-lt').on('click', function () {
         var data = {
-            action: 'get-page-comment',
             page: 'index',
             limit: 2,
-            page_num: Number($('#page-comment').attr('page-num')) - 1
+            page_num: Number($('#page-comment').attr('page-num')) - 1,
+            _token: $("input[name*='_token']").val()
         };
 
         $.ajax({
-            url: 'index.php',
+            url: "{{url('get-page-comment')}}",
             type: 'POST',
             data: data,
-            success: function (res) {
-                console.log('success: res - ', res);
+            success: function (result) {
+                $('#page-comment').attr('page-num', result.page_num);
+                $('#feedback_1 span').text(result.comments[0]['comment']);
+
+                if(result.comments[1] !== undefined)
+                    $('#feedback_2 span').text(result.comments[1]['comment']);
+                else
+                    $('#feedback_2 span').text('');
             },
-            error: function (res) {
-                console.log('error: res - ', res);
+            error: function (result) {
+                console.log('error: result - ', result);
             }
         });
     });

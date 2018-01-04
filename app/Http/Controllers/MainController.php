@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Request;
 
+use App\PageComment;
 use App\Lesson;
 use App\Post;
 
@@ -47,5 +49,36 @@ class MainController extends Controller
         $post->update();
 
         return view('article', compact('post'));
+    }
+
+    public function getComments()
+    {
+        $result = [];
+
+        $page = Request::get('page');
+        $pageNum = (int)Request::get('page_num');
+        $limit = (int)Request::get('limit');
+
+        $count = PageComment::where('page', $page)->count();
+        $lastPage = ceil($count / $limit);
+
+        if($lastPage < $pageNum)
+        {
+            $pageNum = 1;
+            $result['page_num'] = 1;
+        }
+        elseif ($pageNum < 1)
+        {
+            $pageNum = $lastPage;
+            $result['page_num'] = $lastPage;
+        }
+        else
+            $result['page_num'] = $pageNum;
+
+        $skip = ($pageNum - 1) * $limit;
+
+        $result['comments']= DB::table('page_comments')->skip($skip)->take($limit)->get(['author', 'comment']);
+
+        return $result;
     }
 }

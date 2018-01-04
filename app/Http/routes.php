@@ -5,6 +5,7 @@ Route::auth();
 Route::get('/', 'MainController@index');
 Route::get('/blog', 'MainController@blog');
 Route::get('/article/{id}', 'MainController@article');
+Route::post('/get-page-comment', 'MainController@getComments');
 
 /* Админка */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
