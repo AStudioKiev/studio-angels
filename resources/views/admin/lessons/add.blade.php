@@ -25,10 +25,10 @@
                     <input type="text" name="name" required placeholder="Название" class="form-control input-field">
                 </div>
                 <div class="select form-group mar-tp-1 mar-bt-2">
-                    <input type="text" name="teacher" required placeholder="Преподаватель" class="form-control input-field" value="Test">
+                    <input type="text" name="teacher" required placeholder="Преподаватель" class="form-control input-field">
                 </div>
                 <div class="select form-group mar-tp-1 mar-bt-2">
-                    <input type="number" name="max_students" required placeholder="Максимальное количество учасников" class="form-control input-field" value="8">
+                    <input type="number" name="max_students" required placeholder="Максимальное количество учасников" class="form-control input-field">
                 </div>
                 <div class="select form-group mar-tp-1 mar-bt-2">
                     <select name="date">

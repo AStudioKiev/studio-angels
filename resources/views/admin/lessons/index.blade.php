@@ -5,6 +5,9 @@
 
     <div class="admin-holder table-responsive">
         <table class="table admin-table lesson-table">
+            <a href="{{url('admin')}}">
+                <button id="mainBtn" name="add-new-btn" class="add-new-btn">Главная</button>
+            </a>
             <a href="{{url('admin/lessons/add')}}">
                 <button id="blogBtn" name="add-new-btn" class="add-new-btn">Добавить урок</button>
             </a>

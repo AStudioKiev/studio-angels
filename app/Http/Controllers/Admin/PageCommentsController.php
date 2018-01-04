@@ -17,7 +17,7 @@ class PageCommentsController extends Controller
 
     public function addIndex()
     {
-        return view('admin.lessons.add');
+        return view('admin.page-comments.add');
     }
 
     public function add()
@@ -32,9 +32,9 @@ class PageCommentsController extends Controller
         return view('admin.page-comments.edit', compact('pageComment'));
     }
 
-    public function edit()
+    public function edit($id)
     {
-        $pageComment = PageComment::find(Request::get('data_id'));
+        $pageComment = PageComment::find($id);
 
         $pageComment->page = Request::get('page');
         $pageComment->author = Request::get('author');

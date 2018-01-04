@@ -5,10 +5,13 @@
 
     <div class="admin-holder table-responsive">
         <table class="table page-comment-table">
-            <a href="{{url('admin/post/add')}}">
-                <button id="addNewBtn" name="add-new-btn" class="add-new-btn">Добавить новую статью</button>
+            <a href="{{url('admin')}}">
+                <button id="mainBtn" name="add-new-btn" class="add-new-btn">Главная</button>
             </a>
-            <a href="{{url('admin/post/basket')}}">
+            <a href="{{url('admin/page-comments/add')}}">
+                <button id="addNewBtn" name="add-new-btn" class="add-new-btn">Добавить новый комментарий</button>
+            </a>
+            <a href="{{url('admin/page-comments/basket')}}">
                 <button id="basketBtn" name="add-new-btn" class="add-new-btn">Корзина</button>
             </a>
             <thead>
@@ -71,7 +74,7 @@
                 _token: $("input[name*='_token']").val()
             };
             $.ajax({
-                url: "{{url('admin/post/delete')}}",
+                url: "{{url('admin/page-comments/delete')}}",
                 type: 'POST',
                 data: data,
                 error: function (result) {

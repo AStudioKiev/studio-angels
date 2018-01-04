@@ -35,10 +35,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
     /* Коментарии на странице */
     Route::group(['prefix' => 'page-comments'], function (){
         Route::get('/', 'Admin\PageCommentsController@index');
+
         Route::get('/add', 'Admin\PageCommentsController@addIndex');
         Route::post('/add', 'Admin\PageCommentsController@add');
+
         Route::get('/edit/{id}', 'Admin\PageCommentsController@editIndex');
-        Route::post('/edit', 'Admin\PageCommentsController@edit');
+        Route::post('/edit/{id}', 'Admin\PageCommentsController@edit');
+
         Route::post('/delete', 'Admin\PageCommentsController@delete');
 
        // Корзина коментариев на странице

@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\PageComment withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\PageComment withoutTrashed()
  * @mixin \Eloquent
+ * @property \Carbon\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\PageComment whereDeletedAt($value)
  */
 class PageComment extends Model
 {
