@@ -93,12 +93,24 @@
                     <a class="feedback-arrow-rt"><img src="img/right_pink.png" alt="" height="100%"></a>
                 </div>
                 <div id="feedback_1" class="feedback-1">
-                    <span>Мило и уютно. Очень высокие пилоны, есть где разгулятся) а еще есть душ, что большая редкость. Персонал приветливый, тренера очень внимательные и дружелюбные.</span>
+                    <span>
+                        @if(!empty($pageComments[0]))
+                            {{$pageComments[0]->comment}}
+                        @else
+                            {{''}}
+                        @endif
+                    </span>
                 </div>
             </div>
             <div class="feedback-row-2">
                 <div id="feedback_2" class="feedback-2">
-                    <span>Чудесное место! Тренеры профессионалы своего дела, каждому уделяют внимание, помогают, страхуют, советуют. Тело прокачивается с каждой тренировкой. Занятие продумано от и до. Хожу с радостью уже долгое время и желание ходить не пропадает абсолютно))</span>
+                    <span>
+                        @if(!empty($pageComments[1]))
+                            {{$pageComments[1]->comment}}
+                        @else
+                            {{''}}
+                        @endif
+                    </span>
                 </div>
                 <div class="feedback-girl"><img src="img/feedback_girl.png" alt="" width="100%"></div>
             </div>

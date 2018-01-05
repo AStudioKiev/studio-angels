@@ -33,7 +33,9 @@ class MainController extends Controller
             Lesson::where('day', 'Воскресенье')->count()
         );
 
-        return view('index', compact('lessons'));
+        $pageComments = PageComment::limit(2)->get();
+
+        return view('index', compact('lessons', 'pageComments'));
     }
 
     public function blog()
