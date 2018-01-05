@@ -2,6 +2,19 @@
 
 @section('body')
 
+    <ul id="mobile_nav" class="mobile-hidden">
+        <li><a class="scroll" href="/">Главная</a></li>
+        <li><a class="scroll" href="/#about_us">О нас</a></li>
+        <li><a class="scroll" href="/#gallery">Галерея</a></li>
+        <li><a class="scroll" href="{{url('blog')}}">Блог</a></li>
+        <li><a class="scroll" href="/#info_block">Напрвления</a></li>
+        <li><a class="scroll" href="/#timetable">Расписание</a></li>
+        <li><a class="scroll" href="/#prices">Цены</a></li>
+        <li><a class="scroll" href="/#contacts">Контакты</a></li>
+
+        <div id="toggle_nav" onclick="showNav();"><img src="{{asset('img/menu-button.svg')}}" alt=""></div>
+    </ul>
+
     <div class="blog-container">
         <h1 class="lg-header">Блог Studio Angels</h1>
 

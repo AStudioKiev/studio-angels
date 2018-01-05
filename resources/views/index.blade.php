@@ -23,7 +23,7 @@
         <li><a class="scroll" href="#prices">Цены</a></li>
         <li><a class="scroll" href="#contacts">Контакты</a></li>
 
-        <div id="toggle_nav" onclick="showNav();"><img src="img/menu-button.svg" alt=""></div>
+        <div id="toggle_nav" onclick="showNav();"><img src="{{asset('img/menu-button.svg')}}" alt=""></div>
     </ul>
 
     <div class="top-container" id="home">
@@ -34,12 +34,12 @@
                 <a href="https://www.youtube.com/channel/UC0tqftfsLy77ReEHfwQfLSQ" target="_blank" class="social-link"><img src="img/youtube_logo.png" alt="" width="100%" height="100%"></a>
             </div>
 
-            <div class="geometry-holder"><img src="img/top_bg.png" alt="" width="100%"></div>
+            <div class="geometry-holder"><img src="{{asset('img/top_bg.png')}}" alt="" width="100%"></div>
 
             <div class="main-info-holder">
                 <h1>Pole Dance</h1>
                 <h2>Studio Angels</h2>
-                <div class="logo-holder"><img src="img/logo.png" alt="" width="100%"></div>
+                <div class="logo-holder"><img src="{{asset('img/logo.png')}}" alt="" width="100%"></div>
             </div>
 
             <div class="phone-top-holder">
