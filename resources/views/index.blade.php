@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
+@extends('layouts.main')
+
+@section('head-begin')
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59585284-1"></script>
     <script>
@@ -9,29 +9,8 @@
         gtag('js', new Date());
         gtag('config', 'UA-59585284-1');
     </script>
+@stop
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Студия танцев">
-    <meta name="keywords" content="">
-    <title>Angels</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic" rel="stylesheet">
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-    <link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
-
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.appear.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/moment.js"></script>
-</head>
-
-<body>
 <ul id="mobile_nav" class="mobile-hidden">
     <li><a class="scroll" href="#home">Главная</a></li>
     <li><a class="scroll" href="#about_us">О нас</a></li>
@@ -362,19 +341,19 @@
                     @endif
 
                     @if (count($lessons['Вторник']) > $i)
-                            <td>
-                                <p>{{$lessons['Вторник'][$i]->time}}</p>
-                                <p>{{$lessons['Вторник'][$i]->name}}</p>
-                            </td>
+                        <td>
+                            <p>{{$lessons['Вторник'][$i]->time}}</p>
+                            <p>{{$lessons['Вторник'][$i]->name}}</p>
+                        </td>
                     @else
                         <td></td>
                     @endif
 
                     @if (count($lessons['Среда']) > $i)
-                            <td>
-                                <p>{{$lessons['Среда'][$i]->time}}</p>
-                                <p>{{$lessons['Среда'][$i]->name}}</p>
-                            </td>
+                        <td>
+                            <p>{{$lessons['Среда'][$i]->time}}</p>
+                            <p>{{$lessons['Среда'][$i]->name}}</p>
+                        </td>
                     @else
                         <td></td>
                     @endif
@@ -389,28 +368,28 @@
                     @endif
 
                     @if (count($lessons['Пятница']) > $i)
-                            <td>
-                                <p>{{$lessons['Пятница'][$i]->time}}</p>
-                                <p>{{$lessons['Пятница'][$i]->name}}</p>
-                            </td>
+                        <td>
+                            <p>{{$lessons['Пятница'][$i]->time}}</p>
+                            <p>{{$lessons['Пятница'][$i]->name}}</p>
+                        </td>
                     @else
                         <td></td>
                     @endif
 
                     @if (count($lessons['Суббота']) > $i)
-                            <td>
-                                <p>{{$lessons['Суббота'][$i]->time}}</p>
-                                <p>{{$lessons['Суббота'][$i]->name}}</p>
-                            </td>
+                        <td>
+                            <p>{{$lessons['Суббота'][$i]->time}}</p>
+                            <p>{{$lessons['Суббота'][$i]->name}}</p>
+                        </td>
                     @else
                         <td></td>
                     @endif
 
                     @if (count($lessons['Воскресенье']) > $i)
-                            <td>
-                                <p>{{$lessons['Воскресенье'][$i]->time}}</p>
-                                <p>{{$lessons['Воскресенье'][$i]->name}}</p>
-                            </td>
+                        <td>
+                            <p>{{$lessons['Воскресенье'][$i]->time}}</p>
+                            <p>{{$lessons['Воскресенье'][$i]->name}}</p>
+                        </td>
                     @else
                         <td></td>
                     @endif
@@ -530,7 +509,8 @@
         </div>
     </div>
 </div>
-</body>
+
+@section('js-section')
 
 <script>
     //Allows bootstrap carousels to display 3 items per page rather than just one
@@ -694,4 +674,4 @@
     });
 </script>
 
-</html>
+@stop

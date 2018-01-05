@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Агенство">
-    <meta name="keywords" content="">
-    <title>Angels</title>
+@extends('layouts.main')
 
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic" rel="stylesheet">
-    <meta name="theme-color" content="#ffffff">
-
-    <script src="{{asset('js/jquery.js')}}"></script>
-    <script src="{{asset('js/jquery.appear.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-</head>
-
-<body>
 <div class="blog-container">
     <h1 class="lg-header">Блог Studio Angels</h1>
 
@@ -50,8 +31,9 @@
         </div>
     </div>
 </div>
-</body>
 
-<script src="{{asset('js/mine.js')}}"></script>
+@section('js-section')
 
-</html>
+    <script src="{{asset('js/mine.js')}}"></script>
+
+@stop
