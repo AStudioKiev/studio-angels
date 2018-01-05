@@ -1,31 +1,35 @@
 @extends('layouts.main')
 
-<div class="blog-container">
-    <h1 class="lg-header">Блог Studio Angels</h1>
+@section('body')
 
-    <div class="container-md">
-        <div id="articles_list" class="panel-group zero">
-            @foreach($posts as $post)
-            <div class="panel panel-default article-holder">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <div>
-                            <div class="pink-top">
-                                <span>{{$post->title}}</span>
-                            </div>
+    <div class="blog-container">
+        <h1 class="lg-header">Блог Studio Angels</h1>
 
-                            <div class="white-bottom">
-                                <img class="article-image" src="{{asset($post->image)}}" alt="">
-                                <a href="{{url('article', $post->id)}}" class="more-link">Подробнее...</a>
+        <div class="container-md">
+            <div id="articles_list" class="panel-group zero">
+                @foreach($posts as $post)
+                <div class="panel panel-default article-holder">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <div>
+                                <div class="pink-top">
+                                    <span>{{$post->title}}</span>
+                                </div>
+
+                                <div class="white-bottom">
+                                    <img class="article-image" src="{{asset($post->image)}}" alt="">
+                                    <a href="{{url('article', $post->id)}}" class="more-link">Подробнее...</a>
+                                </div>
                             </div>
-                        </div>
-                    </h4>
+                        </h4>
+                    </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
-</div>
+
+@stop
 
 @section('js-section')
 

@@ -26,5 +26,7 @@
 <body>
     @yield('body')
 </body>
-    @yield('js-section')
+
+@yield('js-section')
+
 </html>
