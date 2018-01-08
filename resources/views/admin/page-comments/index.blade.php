@@ -29,7 +29,11 @@
                 <tr>
                     <td>{{$pageComment->id}}</td>
                     <td>{{$pageComment->author}}</td>
-                    <td>{{$pageComment->comment}}</td>
+                    <td>
+                        <div class="overflow-issue">
+                            <span>{{$pageComment->comment}}</span>
+                        </div>
+                    </td>
                     <td class="admin-item green-item edit-item">
                         <a href="{{url('admin/page-comments/edit', $pageComment->id)}}">Редактировать</a>
                     </td>

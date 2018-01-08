@@ -31,7 +31,11 @@
                 <tr>
                     <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
-                    <td>{{$post->text}}</td>
+                    <td>
+                        <div class="overflow-issue">
+                            <span>{{$post->text}}</span>
+                        </div>
+                    </td>
                     <td>
                         <img width="100px" height="100px" src="{{ asset($post->image) }}">
                     </td>

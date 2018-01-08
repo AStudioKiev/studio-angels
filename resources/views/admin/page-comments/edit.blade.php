@@ -15,8 +15,8 @@
                 <div class="select form-group mar-tp-1 mar-bt-2">
                     <input type="text" name="author" required placeholder="Автор" class="form-control input-field" value="{{$pageComment->author}}">
                 </div>
-                <div class="select form-group mar-tp-1 mar-bt-2">
-                    <input type="text" name="comment" required placeholder="Комментарий" class="form-control input-field" value="{{$pageComment->comment}}">
+                <div class="select-wrapper mar-bt-1">
+                    <textarea id="text" rows="7" name="comment" placeholder="Комментарий" class="textarea-field">{{$pageComment->comment}}</textarea>
                 </div>
             </div>
             <input type="submit" value="Редактировать">
