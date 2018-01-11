@@ -24,6 +24,7 @@ a, a:hover, a:focus {
     width: 100%;
     max-width: 1180px;
     margin: 0 auto;
+    position: relative;
 }
 .container-sm {
     width: 100%;
@@ -161,19 +162,6 @@ h1:hover {
 
 
 
-#about_us {
-    text-align: left;
-    position: relative;
-    margin: 0;
-    border-top: 25px solid #a98dce;
-    border-bottom: 25px solid #a98dce;
-    overflow: hidden;
-    transform: skewY(2deg);
-    -moz-transform: skewY(2deg);
-    -webkit-transform: skewY(2deg);
-    min-height: 100vh;
-    margin-top: -1px;
-}
 #info_block {
     text-align: right;
     position: relative;
@@ -197,15 +185,6 @@ h1:hover {
     background-color: rgba(215, 185, 255, 0.2);
     z-index: 20;
 }
-#about_us .about-photo {
-     transform: skewY(-2deg);
-    -moz-transform: skewY(-2deg);
-    -webkit-transform: skewY(-2deg);
-    width: 100%;
-    max-width: 567px;
-    margin-left: 14%;
-    margin-top: -7px;
-}
 #info_block .about-photo {
      transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);
@@ -228,12 +207,6 @@ h2 {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
-}
-#about_us .xs-text-holder {
-    transform: skewY(-2deg);
-    -moz-transform: skewY(-2deg);
-    -webkit-transform: skewY(-2deg);
-    padding-right: 40px;
 }
 .triangle-top {
     position: absolute;
@@ -479,22 +452,85 @@ h2 {
     font-weight: 700;
 }
 
-.kids-block {
-    text-align: left;
-    position: relative;
-    margin: 0;
+#about_us .skew-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
     border-bottom: 25px solid #a98dce;
     border-top: 25px solid #a98dce;
     overflow: hidden;
     transform: skewY(2deg);
     -moz-transform: skewY(2deg);
     -webkit-transform: skewY(2deg);
-    min-height: 100vh;
+}
+.kids-block .skew-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 785px;
+    border-bottom: 25px solid #a98dce;
+    border-top: 25px solid #a98dce;
+    overflow: hidden;
+    transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -webkit-transform: skewY(2deg);
+    background-color: rgba(215, 185, 255, 0.2);
+}
+.kids-block .triangle-top, #about_us .triangle-top {
+    transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -webkit-transform: skewY(2deg);
+    top: -6px;
+}
+.kids-block .triangle-bottom {
+    transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -webkit-transform: skewY(2deg);
+}
+#about_us .triangle-bottom {
+    transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -webkit-transform: skewY(2deg);
+    bottom: 72px;
+}
+.kids-block .pink-blur, #about_us .pink-blur {
+    background-color: transparent;
+    min-height: 719px;
+}
+#about_us {
+    text-align: left;
+    position: relative;
+    margin: 0;
+    min-height: 700px;
+    padding-top: 40px;
+}
+.kids-block {
+    text-align: left;
+    position: relative;
+    margin: 0;
+    min-height: 785px;
+    padding-top: 40px;
 }
 .kids-block .about-photo {
     width: 100%;
-    max-width: 487px;
+    max-width: 490px;
     margin-left: 17%;
+    position: absolute;
+    top: -24px;
+}
+#about_us .about-photo {
+    width: 100%;
+    max-width: 562px;
+    margin-left: 14%;
+    margin-top: 15px;
+    position: absolute;
+    top: -34px;
+    transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -webkit-transform: skewY(2deg);
 }
 .kids-block .xs-text-holder {
     margin-right: 18px;
@@ -1439,8 +1475,8 @@ h2 {
     }
 }
 @media screen and (max-width: 1180px) {
-    #about_us {
-        min-height: 670px;
+    #about_us, #about_us .skew-bg {
+        min-height: 686px;
     }
     .pink-blur {
         text-align: right;
@@ -1455,6 +1491,8 @@ h2 {
     }
     #about_us .about-photo {
         margin-left: -46px;
+        max-width: 553px;
+        top: -41px;
     }
     .xs-text-holder {
         margin-top: 30px;
@@ -1462,6 +1500,22 @@ h2 {
     }
     .kids-block .xs-text-holder {
         margin-right: 40px;
+    }
+    .kids-block .triangle-top {
+        position: static;
+        margin-right: 83px;
+        margin-top: -19px;
+    }
+    .kids-block .triangle-bottom {
+        position: static;
+        margin-right: 45px;
+        margin-top: -30px;
+    }
+    #about_us .triangle-top {
+        margin-top: -18px;
+    }
+    #about_us .triangle-bottom {
+        margin-top: 50px;
     }
 }
 @media screen and (max-width: 1020px) {
@@ -1491,7 +1545,7 @@ h2 {
     .timetable-block .triangle-right {
         transform: rotate(180deg);
     }
-    .pink-blur, .kids-block, .timetable-block  {
+    .pink-blur, .timetable-block  {
         min-height: auto;
     }
     .contacts-block {
@@ -1625,6 +1679,9 @@ h2 {
     .kids-block .about-photo {
         margin-left: -69px;
     }
+    #about_us, #about_us .skew-bg {
+        min-height: 736px;
+    }
 }
 @media screen and (max-width: 820px) {
     .gallery-info-holder {
@@ -1681,7 +1738,7 @@ h2 {
 }
 @media screen and (max-width: 707px) {
     .kids-block {
-        min-height: 814px;
+        min-height: 895px;
     }
     .kids-block .about-photo {
         display: none;
@@ -1694,6 +1751,12 @@ h2 {
     .kids-block .triangle-bottom, .kids-block .triangle-top {
         text-align: center;
         margin-right: 0;
+    }
+    .kids-block .triangle-bottom {
+        margin-top: 41px;
+    }
+    .kids-block .skew-bg {
+        min-height: 875px;
     }
     .feedback-1, .feedback-2 {
         margin-left: auto;
@@ -1757,20 +1820,14 @@ h2 {
     }
 }
 @media screen and (max-width: 370px) {
-    #about_us {
-        min-height: 693px;
+    .kids-block .triangle-bottom, #about_us .triangle-bottom {
+        display: none;
     }
     .kids-block {
-        min-height: 854px;
+        min-height: 875px;
     }
 }
 @media screen and (max-width: 350px) {
-    #about_us {
-        min-height: 710px;
-    }
-    .kids-block {
-        min-height: 890px;
-    }
     .contacts-holder {
         padding: 40px 20px;
     }
@@ -1782,10 +1839,5 @@ h2 {
     }
 }
 @media screen and (max-width: 325px) {
-    #about_us {
-        min-height: 730px;
-    }
-    .kids-block {
-        min-height: 914px;
-    }
+
 }

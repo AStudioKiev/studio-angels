@@ -66,19 +66,23 @@
     </div>
 
     <div id="about_us">
-        <img class="about-photo" src="img/photo.jpg" alt="">
+        <div class="skew-bg"></div>
 
-        <div class="pink-blur">
-            <div class="triangle-top popup-down popup-delayed-4"><img src="img/up_triangles.png" alt=""></div>
+        <div class="container-md">
+            <img class="about-photo" src="img/photo.jpg" alt="">
 
-            <div class="container-sm popup-up" align="right">
-                <div class="xs-text-holder">
-                    <h2>О нас</h2>
-                    <span class="regular-md">Angels Studio это мастерская талантов. Творческое пространство, в котором каждый найдет занятие по душе. Мы предлагаем вам заниматься спортом по-новому! Pole Dance может стать для вас регулярным и интересным спортом вместо изнуряющих и монотонных тренировок. Или новым витком в вашей истории. Ученики студии принимают участие в соревнованиях и показательных выступлениях.</span>
+            <div class="pink-blur">
+                <div class="triangle-top popup-down popup-delayed-4"><img src="img/up_triangles.png" alt=""></div>
+
+                <div class="container-sm popup-up" align="right">
+                    <div class="xs-text-holder">
+                        <h2>О нас</h2>
+                        <span class="regular-md">Angels Studio это мастерская талантов. Творческое пространство, в котором каждый найдет занятие по душе. Мы предлагаем вам заниматься спортом по-новому! Pole Dance может стать для вас регулярным и интересным спортом вместо изнуряющих и монотонных тренировок. Или новым витком в вашей истории. Ученики студии принимают участие в соревнованиях и показательных выступлениях.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="triangle-bottom popup-up popup-delayed-4"><img src="img/down_triangles.png" alt=""></div>
+                <div class="triangle-bottom popup-up popup-delayed-4"><img src="img/down_triangles.png" alt=""></div>
+            </div>
         </div>
     </div>
 
@@ -307,19 +311,23 @@
     </div>
 
     <div class="kids-block">
-        <img class="about-photo" src="img/child.png" alt="">
+        <div class="skew-bg"></div>
 
-        <div class="pink-blur">
-            <div class="triangle-top popup-down popup-delayed-4"><img src="img/up_triangles.png" alt=""></div>
+        <div class="container-md">
+            <img class="about-photo" src="img/child.png" alt="">
 
-            <div class="container-sm skew-inverse" align="right">
-                <div class="xs-text-holder popup-up">
-                    <h2>Тренировки для детей</h2>
-                    <span class="regular-md">Pole Kids это одно из самых увлекательных направлений pole dance. Отличный способ направить детскую энергию в продуктивное русло. На занятиях детки учатся делать трюки начиная с техники безопасности и основ физической подготовки. Во время тренировочек у малышей хорошо формирется координация движений и вестибулярный аппарат. Детки становятся физически крепкими, ловкими, гибкими и выносливыми. Изучение интересных трюков на пилоне, тренирует не только тело, но и мозг. Pole dance для деток это очень здоровое и увлекательное занятие которое развивает самодисциплину, терпение и закаляет характер.</span>
+            <div class="pink-blur">
+                <div class="triangle-top"><img src="img/up_triangles.png" alt=""></div>
+
+                <div class="container-sm" align="right">
+                    <div class="xs-text-holder popup-up">
+                        <h2>Тренировки для детей</h2>
+                        <span class="regular-md">Pole Kids это одно из самых увлекательных направлений pole dance. Отличный способ направить детскую энергию в продуктивное русло. На занятиях детки учатся делать трюки начиная с техники безопасности и основ физической подготовки. Во время тренировочек у малышей хорошо формирется координация движений и вестибулярный аппарат. Детки становятся физически крепкими, ловкими, гибкими и выносливыми. Изучение интересных трюков на пилоне, тренирует не только тело, но и мозг. Pole dance для деток это очень здоровое и увлекательное занятие которое развивает самодисциплину, терпение и закаляет характер.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="triangle-bottom popup-up popup-delayed-4"><img src="img/down_triangles.png" alt=""></div>
+                <div class="triangle-bottom"><img src="img/down_triangles.png" alt=""></div>
+            </div>
         </div>
     </div>
 
