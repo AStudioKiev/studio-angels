@@ -235,7 +235,7 @@
 
             <div class="gallery-bottom skew-inverse">
                 <div class="pink-blur">
-                    <a href="blog.php" class="blog-link">Наш Блог</a>
+                    <a href="{{url('blog')}}" class="blog-link">Наш Блог</a>
                     <img src="img/gallery_bot.png" alt="" width="100%;">
                 </div>
             </div>
